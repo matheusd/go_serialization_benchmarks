@@ -26,9 +26,11 @@ func randString(l int) string {
 	return fmt.Sprintf("%x", buf)[:l]
 }
 
-func generateSmallStruct() []*SmallStruct {
+// GenerateSmallStruct generates a set of random SmallStruct samples for
+// benchmarking.
+func GenerateSmallStruct(count int) []*SmallStruct {
 	a := make([]*SmallStruct, 0, 1000)
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < count; i++ {
 		a = append(a, &SmallStruct{
 			Name:     randString(MaxSmallStructNameSize),
 			BirthDay: time.Now(),
@@ -44,7 +46,7 @@ func generateSmallStruct() []*SmallStruct {
 // BenchMarshalSmallStruct benchmarks marshalling the [SmallStruct] type.
 func BenchMarshalSmallStruct(b *testing.B, s Serializer) {
 	b.Helper()
-	data := generateSmallStruct()
+	data := GenerateSmallStruct(1000)
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -75,7 +77,7 @@ func BenchUnmarshalSmallStruct(b *testing.B, s Serializer, validate bool) {
 		forcesUTC = set.ForcesUTC()
 	}
 
-	data := generateSmallStruct()
+	data := GenerateSmallStruct(1000)
 	ser := make([][]byte, len(data))
 	var serialSize int
 	for i, d := range data {
