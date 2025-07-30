@@ -1,6 +1,8 @@
 module github.com/alecthomas/go_serialization_benchmarks
 
-go 1.22.4
+go 1.23.0
+
+toolchain go1.24.3
 
 require (
 	github.com/200sc/bebop v0.5.0
@@ -32,20 +34,28 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.3.5
 	go.dedis.ch/protobuf v1.0.11
 	go.mongodb.org/mongo-driver v1.11.1
-	google.golang.org/protobuf v1.34.2
+	google.golang.org/protobuf v1.36.6
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	wellquite.org/bebop v0.0.0-20231109192402-a92af83691ec
 )
 
-require github.com/mus-format/common-go v0.0.0-20240427160332-fda7f59c1da2 // indirect
+require (
+	buf.build/go/hyperpb v0.1.0 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/mus-format/common-go v0.0.0-20240427160332-fda7f59c1da2 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
+	github.com/timandy/routine v1.1.5 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+)
 
 require (
 	github.com/DataDog/zstd v1.5.2 // indirect
 	github.com/glycerine/goconvey v0.0.0-20190410193231-58a59202ab31 // indirect
 	github.com/glycerine/rbtree v0.0.0-20190406191118-ceb71889d809 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
-	github.com/google/uuid v1.3.1 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/uuid v1.6.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20210603182125-eeedf4a0e899 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
@@ -60,6 +70,6 @@ require (
 	github.com/protolambda/zssz v0.1.1 // indirect
 	github.com/prysmaticlabs/go-bitfield v0.0.0-20190825002834-fb724e897364 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
-	golang.org/x/exp v0.0.0-20231110203233-9a3e6036ecaa // indirect
+	golang.org/x/exp v0.0.0-20250620022241-b7579e27df2b // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

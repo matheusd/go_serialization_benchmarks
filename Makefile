@@ -28,6 +28,9 @@ structdef.pb.go: structdef.proto
 structdef-pulsar.pulsar.go: structdef-pulsar.proto
 	protoc --go-pulsar_out=. --go-pulsar_opt=paths=source_relative --go-pulsar_opt=features=protoc+fast -I . structdef-pulsar.proto
 
+structdef-hyperpb.pb.go: structdef-hyperpb.proto
+	protoc --go_opt=paths=source_relative --go_out=. structdef-hyperpb.proto
+
 #structdef.capnp2.go: structdef.capnp2
 #	go run zombiezen.com/go/capnproto2/capnpc-go@latest compile -I${GOPATH}/src -ogo structdef.capnp2
 

@@ -20,6 +20,7 @@ import (
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/gotiny"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/hprose"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/hprose2"
+	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/hyperpb"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/idr"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/ikea"
 	"github.com/alecthomas/go_serialization_benchmarks/internal/serializers/jsoniter"
@@ -290,6 +291,20 @@ var benchmarkCases = []BenchmarkCase{
 		New:  gogo.NewGogoJsonSerializer,
 
 		TimeSupport: TSRFC3339Ns,
+		APIKind:     AKCodegen,
+	}, {
+		Name: "hyperpb/std",
+		URL:  "https://github.com/bufbuild/hyperpb-go",
+		New:  hyperpb.NewHyperpbStdSerializer,
+
+		TimeSupport: TSNoSupport,
+		APIKind:     AKCodegen,
+	}, {
+		Name: "hyperpb/pgo",
+		URL:  "https://github.com/bufbuild/hyperpb-go",
+		New:  hyperpb.NewHyperpbPGOSerializer,
+
+		TimeSupport: TSNoSupport,
 		APIKind:     AKCodegen,
 	}, {
 		Name: "colfer",
